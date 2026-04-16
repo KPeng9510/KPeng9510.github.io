@@ -327,6 +327,20 @@
       font-size: 0.9rem;
     }
 
+    /* Publication year group headings */
+    .year-heading {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 1.5rem 0 0.5rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .year-heading:first-of-type {
+      margin-top: 0.5rem;
+    }
+
     /* Profile photo at top of Contact card */
     .contact-photo {
       width: 100%;
@@ -613,48 +627,22 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS: each as a card with figure + description -->
+    <!-- PUBLICATIONS: each as a card with figure + description, grouped by year -->
     <section id="publications" class="card">
-      <h2>Selected Publications</h2>
+      <h2>Publications</h2>
       <p class="muted">
-        Each card below shows a key figure and short description of the paper.
-        Replace the placeholder image path (e.g., <code>figs/hopadiff.png</code>)
-        with the actual figure file once uploaded.
+        <sup>*</sup> denotes shared first authorship; <sup>+</sup> denotes corresponding author.
+        Each card includes a placeholder for a key figure &mdash; drop images into a <code>figs/</code>
+        folder with the filenames shown below (e.g., <code>figs/hopadiff.png</code>) to have them
+        render automatically.
       </p>
 
       <div class="pub-grid">
 
-        <!-- Paper 1: HopaDIFF -->
-        <div class="pub-card">
-          <div class="pub-figure">
-            <img src="figs/hopadiff.png" alt="HopaDIFF key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(HopaDIFF)';" />
-          </div>
-          <div class="pub-content">
-            <span class="pub-venue spotlight">NeurIPS 2025 Spotlight</span>
-            <h3>HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios</h3>
-            <div class="pub-authors"><strong>Peng, K.</strong>, Huang, J., Huang, X., et al.</div>
-            <p class="pub-desc">
-              Proposes textual reference-guided human action segmentation for multi-person scenarios. Introduces <strong>RHAS133</strong>, the first dataset for this task, built from 133 movies with 137 fine-grained actions. The proposed <strong>HopaDIFF</strong> framework combines a cross-input gated HP-xLSTM with Fourier conditioning for effective temporal control, achieving state-of-the-art performance on RHAS133.
-            </p>
-          </div>
-        </div>
+        <!-- ============ 2025 / 2026 ============ -->
+        <div class="year-heading">2025 &ndash; 2026</div>
 
-        <!-- Paper 2: HyProMeta / IJCV -->
-        <div class="pub-card">
-          <div class="pub-figure">
-            <img src="figs/hyprometa.png" alt="HyProMeta key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(HyProMeta)';" />
-          </div>
-          <div class="pub-content">
-            <span class="pub-venue">IJCV 2026</span>
-            <h3>Mitigating Label Noise using Prompt-Based Hyperbolic Meta-Learning in Open-Set Domain Generalization</h3>
-            <div class="pub-authors"><strong>Peng, K.</strong>, Wen, D., Saquib, S. M., et al.</div>
-            <p class="pub-desc">
-              Introduces the <strong>OSDG under Noisy Labels (OSDG-NL)</strong> setting with benchmarks derived from PACS, DigitsDG, and DomainNet. The proposed <strong>HyProMeta</strong> framework incorporates hyperbolic category prototypes and a new-category agnostic prompt to jointly learn noise-aware representations by modeling hierarchical semantic structures in hyperbolic space. Achieves state-of-the-art across all established benchmarks.
-            </p>
-          </div>
-        </div>
-
-        <!-- Paper 3: Go Beyond Earth / ICLR 2026 -->
+        <!-- Go Beyond Earth / ICLR 2026 -->
         <div class="pub-card">
           <div class="pub-figure">
             <img src="figs/go_beyond_earth.png" alt="Go Beyond Earth key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Go Beyond Earth)';" />
@@ -662,14 +650,152 @@
           <div class="pub-content">
             <span class="pub-venue">ICLR 2026</span>
             <h3>Go Beyond Earth: Understanding Human Actions and Scenes in Microgravity Environments</h3>
-            <div class="pub-authors">Wen, D.*, Qi, L.*, <strong>Peng, K.</strong>, et al.</div>
+            <div class="pub-authors">Wen, D.*, Qi, L.*, <strong>Peng<sup>+</sup>, K.</strong>, Yang, K., Teng, F., Luo, A., Fu, J., Chen, Y., Liu, R., Shi, Y., Sarfraz, M. S., Stiefelhagen, R.</div>
             <p class="pub-desc">
-              Explores human action and scene understanding in microgravity environments, an under-studied setting with highly unusual motion patterns and visual context. The paper introduces a benchmark and methodology to adapt video understanding models to this domain, opening a new direction for robust action recognition under extreme distribution shifts.
+              Introduces a new benchmark for human action and scene understanding in microgravity environments, a highly under-explored domain with unusual motion patterns. Opens a new direction for robust video understanding under extreme distribution shifts.
             </p>
           </div>
         </div>
 
-        <!-- Paper 4: EBHDS / NeurIPS 2024 -->
+        <!-- HyProMeta / IJCV 2026 -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/hyprometa.png" alt="HyProMeta key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(HyProMeta)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IJCV 2026</span>
+            <h3>Mitigating Label Noise using Prompt-Based Hyperbolic Meta-Learning in Open-Set Domain Generalization</h3>
+            <div class="pub-authors"><strong>Peng<sup>+</sup>, K.</strong>, Wen, D., Saquib, S. M., Chen, Y., Zheng, J., Schneider, D., Yang<sup>+</sup>, K., Wu, J., Roitberg, A., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Introduces the <strong>OSDG under Noisy Labels (OSDG-NL)</strong> setting with benchmarks derived from PACS, DigitsDG, and DomainNet. The proposed <strong>HyProMeta</strong> framework incorporates hyperbolic category prototypes and a new-category agnostic prompt to jointly learn noise-aware representations in hyperbolic space, achieving state-of-the-art across all established benchmarks.
+            </p>
+          </div>
+        </div>
+
+        <!-- HopaDIFF / NeurIPS 2025 Spotlight -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/hopadiff.png" alt="HopaDIFF key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(HopaDIFF)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue spotlight">NeurIPS 2025 Spotlight</span>
+            <h3>HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Huang, J., Huang<sup>+</sup>, X., Wen, D., Zheng, J., Chen, Y., Yang, K., Wu, J., Hao, C., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Proposes textual reference-guided human action segmentation for multi-person scenarios. Introduces <strong>RHAS133</strong>, the first dataset for this task (133 movies, 137 fine-grained actions). <strong>HopaDIFF</strong> combines a cross-input gated HP-xLSTM with Fourier conditioning for effective temporal control, achieving state-of-the-art on RHAS133.
+            </p>
+          </div>
+        </div>
+
+        <!-- CSBrain / NeurIPS 2025 Spotlight -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/csbrain.png" alt="CSBrain key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(CSBrain)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue spotlight">NeurIPS 2025 Spotlight</span>
+            <h3>CSBrain: A Cross-scale Spatiotemporal Brain Foundation Model for EEG Decoding</h3>
+            <div class="pub-authors">Zhou, Y., Wu<sup>+</sup>, J., Ren, Z., Yao, Z., Lu, W., <strong>Peng, K.</strong>, Zheng, Q., Song, C., Ouyang, W., Gou, C.</div>
+            <p class="pub-desc">
+              A cross-scale spatiotemporal foundation model for EEG decoding that jointly captures multi-resolution brain dynamics, demonstrating strong transfer performance across multiple EEG tasks and datasets.
+            </p>
+          </div>
+        </div>
+
+        <!-- ICCV 2025 -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/unlocking_constraints.png" alt="Unlocking Constraints key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Unlocking Constraints)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ICCV 2025</span>
+            <h3>Unlocking Constraints: Source-Free Occlusion-Aware Seamless Segmentation</h3>
+            <div class="pub-authors">Cao, Y., Zhang, J., Zheng, X., Shi, H., <strong>Peng, K.</strong>, Liu, H., Yang<sup>+</sup>, K., Zhang, H.</div>
+            <p class="pub-desc">
+              Addresses source-free occlusion-aware seamless segmentation, bridging panoramic perception with realistic occlusion handling without requiring access to source-domain data.
+            </p>
+          </div>
+        </div>
+
+        <!-- IJCNN 2025 (self-supervised occluded) -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/ssl_occluded.png" alt="Self-supervised occluded key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(SSL Occluded)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IJCNN 2025</span>
+            <h3>Exploring Self-supervised Skeleton-based Action Recognition in Occluded Environments</h3>
+            <div class="pub-authors">Chen, Y., <strong>Peng<sup>+</sup>, K.</strong>, Roitberg, A., Schneider, D., Zhang, J., Zheng, J., Chen, Y., Liu, R., Yang, K., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Studies self-supervised skeleton-based action recognition in challenging occluded environments, proposing representation learning strategies that remain robust when body joints are partially missing.
+            </p>
+          </div>
+        </div>
+
+        <!-- IROS 2025 (VISO-Grasp) -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/viso_grasp.png" alt="VISO-Grasp key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(VISO-Grasp)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IROS 2025</span>
+            <h3>VISO-Grasp: Vision-Language Informed Spatial Object-centric 6-DoF Active View Planning and Grasping in Clutter and Invisibility</h3>
+            <div class="pub-authors">Shi, Y., Wen, D., Chen, G., Welte, E., Liu, S., <strong>Peng, K.</strong>, Stiefelhagen, R., Rayyes, R.</div>
+            <p class="pub-desc">
+              Combines vision-language models with object-centric spatial reasoning for 6-DoF active view planning and grasping in cluttered and partially-invisible scenes.
+            </p>
+          </div>
+        </div>
+
+        <!-- SMC 2025 (noisy driver) -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/driver_noisy.png" alt="Driver activity noisy labels key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Driver Noisy)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">SMC 2025</span>
+            <h3>Exploring Video-Based Driver Activity Recognition under Noisy Labels</h3>
+            <div class="pub-authors">Fan, L.*, Wen, D.*, <strong>Peng<sup>+</sup>, K.</strong>, Yang, K., Zhang, J., Liu, R., Chen, Y., Zheng, J., Wu, J., Han, X., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Studies video-based driver activity recognition under noisy label conditions, contributing a label-noise-aware training pipeline that substantially improves reliability of in-vehicle action models.
+            </p>
+          </div>
+        </div>
+
+        <!-- SMC 2025 (Snap Segment Deploy) -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/snap_segment_deploy.png" alt="Snap Segment Deploy key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Snap Segment Deploy)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">SMC 2025</span>
+            <h3>Snap, Segment, Deploy: A Visual Data and Detection Pipeline for Wearable Industrial Assistants</h3>
+            <div class="pub-authors">Wen, D., Zheng, J., Liu, R., Xu, Y., <strong>Peng<sup>+</sup>, K.</strong>, Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Proposes a practical visual data collection, segmentation, and deployment pipeline tailored to wearable industrial assistants, enabling rapid adaptation to new objects and environments.
+            </p>
+          </div>
+        </div>
+
+        <!-- ICML 2025 (MindAligner) -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/mindaligner.png" alt="MindAligner key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(MindAligner)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ICML 2025</span>
+            <h3>MindAligner: Explicit Brain Functional Alignment for Cross-Subject Visual Decoding from Limited fMRI Data</h3>
+            <div class="pub-authors">Dai, Y., Yao, Z., Song, C., Zheng, Q., Mai, W., <strong>Peng, K.</strong>, Lu, S., Ouyang, W., Yang, J., Wu<sup>+</sup>, J.</div>
+            <p class="pub-desc">
+              Proposes explicit brain functional alignment for cross-subject visual decoding from limited fMRI data, enabling stronger generalization across subjects with fewer training samples.
+            </p>
+          </div>
+        </div>
+
+        <!-- ============ 2024 ============ -->
+        <div class="year-heading">2024</div>
+
+        <!-- NeurIPS 2024 EBHDS -->
         <div class="pub-card">
           <div class="pub-figure">
             <img src="figs/ebhds.png" alt="EBHDS key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(EBHDS)';" />
@@ -677,14 +803,29 @@
           <div class="pub-content">
             <span class="pub-venue">NeurIPS 2024</span>
             <h3>Advancing Open-Set Domain Generalization Using Evidential Bi-Level Hardest Domain Scheduler</h3>
-            <div class="pub-authors"><strong>Peng, K.</strong>, Wen, D., Yang, K., et al.</div>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Wen, D., Yang<sup>+</sup>, K., Luo, A., Chen, Y., Fu, J., Sarfraz, M. S., Roitberg, A., Stiefelhagen, R.</div>
             <p class="pub-desc">
-              Addresses <strong>Open-Set Domain Generalization (OSDG)</strong>, where models must generalize across domains while identifying unknown categories. The proposed <strong>Evidential Bi-Level Hardest Domain Scheduler (EBHDS)</strong> dynamically selects the most challenging domains in a meta-learning framework and incorporates evidential learning for uncertainty estimation, better separating known and unknown classes under domain shifts.
+              Addresses <strong>Open-Set Domain Generalization (OSDG)</strong>, where models must generalize across domains while identifying unknown categories. <strong>EBHDS</strong> dynamically selects the hardest domains in a meta-learning framework and incorporates evidential uncertainty estimation for better separation of known and unknown classes.
             </p>
           </div>
         </div>
 
-        <!-- Paper 5: RefAtomNet / ECCV 2024 -->
+        <!-- NeurIPS 2024 Muscles in Time -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/muscles_in_time.png" alt="Muscles in Time key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Muscles in Time)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">NeurIPS 2024</span>
+            <h3>Muscles in Time: Learning to Understand Human Motion In-Depth by Simulating Muscle Activations</h3>
+            <div class="pub-authors">Schneider, D., Reiß, S., Kugler, M., Jaus, A., <strong>Peng, K.</strong>, Sutschet, S., Sarfraz, M. S., Matthiesen, S., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Introduces a framework for learning in-depth human motion understanding by simulating muscle activations, linking biomechanics and data-driven motion representation.
+            </p>
+          </div>
+        </div>
+
+        <!-- ECCV 2024 RefAtomNet -->
         <div class="pub-card">
           <div class="pub-figure">
             <img src="figs/refatomnet.png" alt="RefAtomNet key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(RefAtomNet)';" />
@@ -692,14 +833,59 @@
           <div class="pub-content">
             <span class="pub-venue">ECCV 2024</span>
             <h3>Referring Atomic Video Action Recognition</h3>
-            <div class="pub-authors"><strong>Peng, K.*</strong>, Fu, J.*, Yang, K., et al.</div>
+            <div class="pub-authors"><strong>Peng, K.*</strong>, Fu, J.*, Yang<sup>+</sup>, K., Wen, D., Chen, Y., Liu, R., Zheng, J., Zhang, J., Sarfraz, M. S., Stiefelhagen, R., Roitberg, A.</div>
             <p class="pub-desc">
-              Introduces <strong>Referring Atomic Video Action Recognition (RAVAR)</strong>, which identifies the atomic action of a target person guided by textual descriptions. Constructs the <strong>RefAVA</strong> dataset with 36,630 instances and proposes <strong>RefAtomNet</strong>, a cross-stream attention-driven framework that jointly models video, text, and location semantics. Outperforms methods adapted from action localization, video QA, and text-video retrieval.
+              Introduces <strong>Referring Atomic Video Action Recognition (RAVAR)</strong>, which identifies the atomic action of a target person guided by textual descriptions. Contributes the <strong>RefAVA</strong> dataset (36,630 instances) and <strong>RefAtomNet</strong>, a cross-stream attention framework over video, text, and location-semantic streams.
             </p>
           </div>
         </div>
 
-        <!-- Paper 6: CrossMax / AAAI 2024 -->
+        <!-- ECCV 2024 Open Panoramic Segmentation -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/open_panoramic.png" alt="Open Panoramic Segmentation key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Open Panoramic Seg.)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ECCV 2024</span>
+            <h3>Open Panoramic Segmentation</h3>
+            <div class="pub-authors">Zheng, J., Liu, R., Chen, Y., <strong>Peng, K.</strong>, Wu, C., Yang, K., Zhang<sup>+</sup>, J., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Formalizes open-vocabulary panoramic semantic segmentation and proposes methodology that generalizes to unseen categories in 360° imagery.
+            </p>
+          </div>
+        </div>
+
+        <!-- ECCV 2024 Occlusion-Aware Seamless -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/occlusion_seamless.png" alt="Occlusion-Aware Seamless key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Occlusion Seamless)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ECCV 2024</span>
+            <h3>Occlusion-Aware Seamless Segmentation</h3>
+            <div class="pub-authors">Cao, Y., Zhang, J., Shi, H., <strong>Peng, K.</strong>, Zhang, Y., Zhang, H., Stiefelhagen, R., Yang<sup>+</sup>, K.</div>
+            <p class="pub-desc">
+              Addresses seamless segmentation under occlusion by explicitly modeling visibility, achieving improved boundary accuracy and robustness in panoramic imagery.
+            </p>
+          </div>
+        </div>
+
+        <!-- ACMMM 2024 Activated Muscle Group -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/muscle_group_wild.png" alt="Muscle Group key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Activated Muscle Group)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ACM MM 2024</span>
+            <h3>Towards Activated Muscle Group Estimation in the Wild</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Schneider, D., Roitberg, A., Yang<sup>+</sup>, K., Zhang, J., Deng, C., Zhang, K., Sarfraz, M. S., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Introduces activated muscle group estimation from in-the-wild video, a novel task that bridges sports science and computer vision for detailed physical activity analysis.
+            </p>
+          </div>
+        </div>
+
+        <!-- AAAI 2024 CrossMax -->
         <div class="pub-card">
           <div class="pub-figure">
             <img src="figs/crossmax.png" alt="CrossMax key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(CrossMax)';" />
@@ -707,14 +893,14 @@
           <div class="pub-content">
             <span class="pub-venue">AAAI 2024</span>
             <h3>Navigating Open Set Scenarios for Skeleton-Based Action Recognition</h3>
-            <div class="pub-authors"><strong>Peng, K.</strong>, Yin, C., Zheng, J., et al.</div>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Yin, C., Zheng, J., Liu, R., Schneider, D., Zhang, J., Yang<sup>+</sup>, K., Sarfraz, M. S., Stiefelhagen, R., Roitberg, A.</div>
             <p class="pub-desc">
-              Formalizes the <strong>Open-Set Skeleton-based Action Recognition (OS-SAR)</strong> task and establishes a benchmark across three datasets. The proposed <strong>CrossMax</strong> framework aligns skeleton joints, bones, and motion velocities via cross-modal discrepancy suppression during training and distance-based logits refinement during testing, achieving state-of-the-art across multiple datasets and backbones.
+              Formalizes the <strong>Open-Set Skeleton-based Action Recognition (OS-SAR)</strong> task and proposes <strong>CrossMax</strong>, which aligns joints, bones, and velocities via cross-modal discrepancy suppression and distance-based logits refinement.
             </p>
           </div>
         </div>
 
-        <!-- Paper 7: Skeleton + Noisy Labels / IROS 2024 -->
+        <!-- IROS 2024 Skeleton + Noisy -->
         <div class="pub-card">
           <div class="pub-figure">
             <img src="figs/skeleton_noisy.png" alt="Skeleton noisy labels key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Noisy Skeleton)';" />
@@ -722,14 +908,107 @@
           <div class="pub-content">
             <span class="pub-venue">IROS 2024</span>
             <h3>Skeleton-Based Human Action Recognition with Noisy Labels</h3>
-            <div class="pub-authors">Xu, Y., <strong>Peng, K.</strong>, Wen, D., et al.</div>
+            <div class="pub-authors">Xu, Y., <strong>Peng<sup>+</sup>, K.</strong>, Wen, D., Liu, R., Zheng, J., Chen, Y., Zhang, J., Roitberg, A., Yang, K., Stiefelhagen, R.</div>
             <p class="pub-desc">
-              Studies skeleton-based action recognition under noisy label conditions, a realistic but under-explored setting for human activity understanding. Proposes a noise-robust training strategy tailored to skeleton data and demonstrates consistent gains across standard benchmarks, contributing toward trustworthy action recognition pipelines.
+              Studies skeleton-based action recognition under noisy label conditions and proposes a noise-robust training strategy tailored to skeleton data, contributing to trustworthy action recognition pipelines.
             </p>
           </div>
         </div>
 
-        <!-- Paper 8: One-Shot Occlusion / TMM -->
+        <!-- ICML 2024 Quo Vadis -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/quo_vadis.png" alt="Quo Vadis key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Quo Vadis)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ICML 2024</span>
+            <h3>Position: Quo Vadis, Unsupervised Time Series Anomaly Detection?</h3>
+            <div class="pub-authors">Sarfraz, M. S., Chen, M., Layer, L., <strong>Peng, K.</strong>, Koulakis, M.</div>
+            <p class="pub-desc">
+              A position paper critically reviewing the state of unsupervised time series anomaly detection, highlighting evaluation pitfalls and pointing toward more rigorous benchmarking practices.
+            </p>
+          </div>
+        </div>
+
+        <!-- ICASSP 2024 -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/ssl_skeleton.png" alt="Skeleton SSL key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Multi-Modal SSL)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ICASSP 2024</span>
+            <h3>Elevating Skeleton-Based Action Recognition with Efficient Multi-Modality Self-Supervision</h3>
+            <div class="pub-authors">Wei, Y., <strong>Peng<sup>+</sup>, K.</strong>, Roitberg, A., Zhang, J., Zheng, J., Liu, R., Chen, Y., Yang, K., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Proposes an efficient multi-modality self-supervised learning framework for skeleton-based action recognition, improving representation quality with minimal supervision cost.
+            </p>
+          </div>
+        </div>
+
+        <!-- TITS 2024 EchoTrack -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/echotrack.png" alt="EchoTrack key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(EchoTrack)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IEEE TITS 2024</span>
+            <h3>EchoTrack: Auditory Referring Multi-Object Tracking for Autonomous Driving</h3>
+            <div class="pub-authors">Lin, J.*, Chen, J.*, <strong>Peng, K.*</strong>, He, X., Li, Z., Stiefelhagen, R., Yang<sup>+</sup>, K.</div>
+            <p class="pub-desc">
+              Introduces auditory referring multi-object tracking for autonomous driving, grounding audio descriptions to on-road objects for a richer multi-modal driving perception stack.
+            </p>
+          </div>
+        </div>
+
+        <!-- ICRA 2024 MateRobot -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/materobot.png" alt="MateRobot key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(MateRobot)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ICRA 2024</span>
+            <h3>MateRobot: Material Recognition in Wearable Robotics for People with Visual Impairments</h3>
+            <div class="pub-authors">Zheng, J., Zhang<sup>+</sup>, J., Yang, K., <strong>Peng, K.</strong>, Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Develops material recognition for wearable robotics aimed at users with visual impairments, expanding assistive perception capabilities beyond object category alone.
+            </p>
+          </div>
+        </div>
+
+        <!-- WACV 2024 360BEV -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/360bev.png" alt="360BEV key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(360BEV)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">WACV 2024</span>
+            <h3>360BEV: Panoramic Semantic Mapping for Indoor Bird's-Eye View</h3>
+            <div class="pub-authors">Teng, Z., Zhang, J., Yang<sup>+</sup>, K., <strong>Peng, K.</strong>, Shi, H., Reiß, S., Cao, K., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Proposes 360BEV, a framework for constructing panoramic semantic bird's-eye view representations for indoor scenes, advancing holistic spatial understanding.
+            </p>
+          </div>
+        </div>
+
+        <!-- CVPR 2024 RoDLA -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/rodla.png" alt="RoDLA key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(RoDLA)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">CVPR 2024</span>
+            <h3>RoDLA: Benchmarking the Robustness of Document Layout Analysis Models</h3>
+            <div class="pub-authors">Chen, Y., Zhang<sup>+</sup>, J., <strong>Peng, K.</strong>, Zheng, J., Liu, R., Torr, P. H., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Establishes a systematic robustness benchmark for document layout analysis models, exposing how real-world perturbations affect downstream document understanding performance.
+            </p>
+          </div>
+        </div>
+
+        <!-- ============ 2023 ============ -->
+        <div class="year-heading">2023</div>
+
+        <!-- TMM 2023 -->
         <div class="pub-card">
           <div class="pub-figure">
             <img src="figs/oneshot_occlusion.png" alt="One-shot occlusion key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(One-Shot Occlusion)';" />
@@ -737,9 +1016,252 @@
           <div class="pub-content">
             <span class="pub-venue">IEEE TMM 2023</span>
             <h3>Delving Deep Into One-Shot Skeleton-Based Action Recognition With Diverse Occlusions</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Roitberg, A., Yang<sup>+</sup>, K., Zhang, J., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Provides a comprehensive benchmark and proposes occlusion-aware mechanisms for one-shot skeleton-based action recognition, substantially improving recognition under realistic occlusion patterns.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sensors 2023 -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/rgb2depth_fall.png" alt="Privacy fall detection key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(RGB2Depth Fall)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IEEE Sensors Journal 2023</span>
+            <h3>Toward Privacy-Supporting Fall Detection via Deep Unsupervised RGB2Depth Adaptation</h3>
+            <div class="pub-authors">Xiao, H.*, <strong>Peng, K.*</strong>, Huang, X., Roitberg, A., Li, H., Wang, Z., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Proposes deep unsupervised RGB-to-depth domain adaptation for privacy-preserving fall detection, enabling use of publicly available RGB data while deploying on privacy-safe depth sensors.
+            </p>
+          </div>
+        </div>
+
+        <!-- CVPR 2023 Arbitrary-Modal -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/arbitrary_modal.png" alt="Arbitrary-Modal Segmentation key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Arbitrary-Modal)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">CVPR 2023</span>
+            <h3>Delivering Arbitrary-Modal Semantic Segmentation</h3>
+            <div class="pub-authors">Zhang, J., Liu, R., Shi, H., Yang<sup>+</sup>, K., Reiß, S., <strong>Peng, K.</strong>, Fu, H., Wang, K., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Introduces a unified framework for arbitrary-modal semantic segmentation that flexibly handles any combination of sensor modalities at inference time.
+            </p>
+          </div>
+        </div>
+
+        <!-- IROS 2023 Quantized Distillation -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/quantized_distillation.png" alt="Quantized Distillation key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Quantized Distillation)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IROS 2023</span>
+            <h3>Quantized Distillation: Optimizing Driver Activity Recognition Models for Resource-Constrained Environments</h3>
+            <div class="pub-authors">Tanama, C., <strong>Peng, K.</strong>, Marinov, Z., Stiefelhagen, R., Roitberg, A.</div>
+            <p class="pub-desc">
+              Combines quantization and knowledge distillation to deliver compact, efficient driver activity recognition models suitable for resource-constrained in-vehicle deployment.
+            </p>
+          </div>
+        </div>
+
+        <!-- ============ 2021 / 2022 ============ -->
+        <div class="year-heading">2021 &ndash; 2022</div>
+
+        <!-- IROS 2022 TransDARC -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/transdarc.png" alt="TransDARC key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(TransDARC)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IROS 2022</span>
+            <h3>TransDARC: Transformer-based Driver Activity Recognition with Latent Space Feature Calibration</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Roitberg, A., Yang<sup>+</sup>, K., Zhang, J., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Introduces a transformer-based driver activity recognition model with latent-space feature calibration, improving both accuracy and reliability of in-vehicle behavior understanding.
+            </p>
+          </div>
+        </div>
+
+        <!-- CVPRW 2022 Energy Expenditure -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/energy_expenditure.png" alt="Energy Expenditure key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Energy Expenditure)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">CVPRW 2022</span>
+            <h3>Should I Take a Walk? Estimating Energy Expenditure from Video Data</h3>
             <div class="pub-authors"><strong>Peng, K.</strong>, Roitberg, A., Yang, K., Zhang, J., Stiefelhagen, R.</div>
             <p class="pub-desc">
-              Investigates one-shot skeleton-based action recognition under diverse occlusion conditions, an important step toward robust deployment. Provides a comprehensive benchmark and proposes occlusion-aware mechanisms that substantially improve recognition performance across realistic occlusion patterns.
+              Tackles energy expenditure estimation directly from video, connecting visual human activity analysis with applications in fitness tracking and digital health.
+            </p>
+          </div>
+        </div>
+
+        <!-- CVPR 2022 Bending Reality -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/bending_reality.png" alt="Bending Reality key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Bending Reality)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">CVPR 2022</span>
+            <h3>Bending Reality: Distortion-aware Transformers for Adapting to Panoramic Semantic Segmentation</h3>
+            <div class="pub-authors">Zhang, J., Yang, K., Ma, C., Reiß, S., <strong>Peng, K.</strong>, Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Proposes distortion-aware transformers that adapt perspective-trained models to panoramic semantic segmentation, directly handling the geometric distortion of 360° imagery.
+            </p>
+          </div>
+        </div>
+
+        <!-- ACCV 2022 MatchFormer -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/matchformer.png" alt="MatchFormer key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(MatchFormer)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ACCV 2022</span>
+            <h3>MatchFormer: Interleaving Attention in Transformers for Feature Matching</h3>
+            <div class="pub-authors">Wang, Q., Zhang, J., Yang, K., <strong>Peng, K.</strong>, Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Introduces interleaved attention in transformer architectures for dense feature matching, improving correspondence quality in challenging matching scenarios.
+            </p>
+          </div>
+        </div>
+
+        <!-- WACV 2022 Trans4Map -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/trans4map.png" alt="Trans4Map key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Trans4Map)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">WACV 2022</span>
+            <h3>Trans4Map: Revisiting Holistic Bird's-Eye-View Mapping from Egocentric Images to Allocentric Semantics with Vision Transformers</h3>
+            <div class="pub-authors">Chen, C., Zhang, J., Yang, K., <strong>Peng, K.</strong>, Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Revisits holistic bird's-eye-view semantic mapping from egocentric imagery using vision transformers, enabling richer allocentric scene understanding.
+            </p>
+          </div>
+        </div>
+
+        <!-- IV 2022 Decision-Level Fusion -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/decision_fusion.png" alt="Decision-Level Fusion key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Decision Fusion)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IV 2022</span>
+            <h3>A Comparative Analysis of Decision-Level Fusion for Multimodal Driver Behaviour Understanding</h3>
+            <div class="pub-authors">Roitberg, A., <strong>Peng, K.</strong>, Marinov, Z., Seibold, C., Schneider, D., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Systematically compares decision-level fusion strategies for multimodal driver behavior understanding, providing practical guidance for sensor-fusion system designers.
+            </p>
+          </div>
+        </div>
+
+        <!-- TPAMI 2022 -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/behind_domain.png" alt="Behind Every Domain key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Domain Shift)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IEEE TPAMI 2022</span>
+            <h3>Behind Every Domain There is a Shift: Adapting Distortion-Aware Vision Transformers for Panoramic Semantic Segmentation</h3>
+            <div class="pub-authors">Zhang, J., Yang<sup>+</sup>, K., Shi, H., Reiß, S., <strong>Peng, K.</strong>, Ma, C., Fu, H., Wang, K., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Extends distortion-aware vision transformers with systematic domain-adaptation strategies to bridge perspective and panoramic semantic segmentation under realistic shifts.
+            </p>
+          </div>
+        </div>
+
+        <!-- TITS 2022 Calibration Networks -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/calibration_driver.png" alt="Calibration Networks key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Confidence Calibration)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IEEE TITS 2022</span>
+            <h3>Is My Driver Observation Model Overconfident? Input-Guided Calibration Networks for Reliable and Interpretable Confidence Estimates</h3>
+            <div class="pub-authors">Roitberg, A., <strong>Peng, K.</strong>, Schneider, D., Yang, K., Koulakis, M., Martínez, M., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Proposes input-guided calibration networks that deliver reliable and interpretable confidence estimates for driver observation models, a key step toward trustworthy in-vehicle AI.
+            </p>
+          </div>
+        </div>
+
+        <!-- TITS 2021 Transfer Beyond FoV -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/transfer_fov.png" alt="Transfer Beyond FoV key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Transfer Beyond FoV)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IEEE TITS 2021</span>
+            <h3>Transfer Beyond the Field of View: Dense Panoramic Semantic Segmentation via Unsupervised Domain Adaptation</h3>
+            <div class="pub-authors">Zhang, J., Ma, C., Yang, K., Roitberg, A., <strong>Peng, K.</strong>, Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Tackles dense panoramic semantic segmentation via unsupervised domain adaptation from narrow-FoV data, enabling holistic scene understanding without panoramic annotations.
+            </p>
+          </div>
+        </div>
+
+        <!-- TITS 2021 MASS -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/mass.png" alt="MASS key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(MASS)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IEEE TITS 2021</span>
+            <h3>MASS: Multi-Attentional Semantic Segmentation of LiDAR Data for Dense Top-View Understanding</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Fei, J., Yang, K., Roitberg, A., Zhang, J., Bieder, F., Heidenreich, P., Stiller, C., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Introduces MASS, a multi-attentional semantic segmentation framework for LiDAR-based dense top-view understanding in autonomous driving.
+            </p>
+          </div>
+        </div>
+
+        <!-- FG 2021 Affect-DML -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/affect_dml.png" alt="Affect-DML key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Affect-DML)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">FG 2021</span>
+            <h3>Affect-DML: Context-Aware One-Shot Recognition of Human Affect using Deep Metric Learning</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Roitberg, A., Schneider, D., Koulakis, M., Yang, K., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Proposes a context-aware deep metric learning framework for one-shot human affect recognition, tackling the fundamental data scarcity of fine-grained affective states.
+            </p>
+          </div>
+        </div>
+
+        <!-- TITS 2021 Trans4Trans -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/trans4trans.png" alt="Trans4Trans key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Trans4Trans)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IEEE TITS 2021</span>
+            <h3>Trans4Trans: Efficient Transformer for Transparent Object and Semantic Scene Segmentation in Real-World Navigation Assistance</h3>
+            <div class="pub-authors">Zhang, J., Yang, K., Constantinescu, A., <strong>Peng, K.</strong>, Müller, K., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Develops an efficient transformer for jointly handling transparent objects and semantic scene segmentation, targeting real-world navigation assistance for users with visual impairments.
+            </p>
+          </div>
+        </div>
+
+        <!-- IV 2021 PillarSegNet -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/pillarsegnet.png" alt="PillarSegNet key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(PillarSegNet)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IV 2021</span>
+            <h3>PillarSegNet: Pillar-based Semantic Grid Map Estimation using Sparse LiDAR Data</h3>
+            <div class="pub-authors">Fei, J., <strong>Peng, K.</strong>, Heidenreich, P., Bieder, F., Stiller, C.</div>
+            <p class="pub-desc">
+              Introduces PillarSegNet, a pillar-based framework for estimating semantic grid maps from sparse LiDAR data, advancing efficient dense scene representation for autonomous driving.
             </p>
           </div>
         </div>
