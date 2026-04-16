@@ -327,6 +327,21 @@
       font-size: 0.9rem;
     }
 
+    /* Profile photo at top of Contact card */
+    .contact-photo {
+      width: 100%;
+      max-width: 220px;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+
+    .contact-photo img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      display: block;
+    }
+
     @media (max-width: 860px) {
       .hero-grid, .two-col {
         grid-template-columns: 1fr;
@@ -441,6 +456,9 @@
         </div>
 
         <aside class="card" id="contact">
+          <div class="contact-photo">
+            <img src="profile.jpg" alt="Kunyu Peng" />
+          </div>
           <h2>Contact</h2>
           <p><strong>Email:</strong> <a href="mailto:kunyu.peng@kit.edu">kunyu.peng@kit.edu</a></p>
           <p><strong>Affiliation:</strong> Karlsruhe Institute of Technology</p>
@@ -455,26 +473,18 @@
     <section id="about" class="two-col">
       <div class="card">
         <h2>About</h2>
-        <div class="about-card">
-          <div class="about-photo">
-            <img src="profile.jpg" alt="Kunyu Peng" />
-            <div class="photo-caption">Kunyu Peng</div>
-          </div>
-          <div class="about-content">
-            <p>
-              I received my PhD in Informatics from Karlsruhe Institute of Technology in 2024,
-              where my dissertation focused on <em>Towards Generalizable Deep Learning-Based Human Action Recognition</em>.
-              Before that, I completed my MSc in Electrical Engineering and Information Technology at KIT
-              and a BSc in Automation at Beijing Institute of Technology.
-            </p>
-            <p>
-              My broader goal is to build robust, generalizable, and trustworthy multi-modal
-              perception systems that reason about human behavior across domains, sensors,
-              and deployment conditions &mdash; with applications in healthcare, rehabilitation,
-              assistive technologies, and human-robot cooperation.
-            </p>
-          </div>
-        </div>
+        <p>
+          I received my PhD in Informatics from Karlsruhe Institute of Technology in 2024,
+          where my dissertation focused on <em>Towards Generalizable Deep Learning-Based Human Action Recognition</em>.
+          Before that, I completed my MSc in Electrical Engineering and Information Technology at KIT
+          and a BSc in Automation at Beijing Institute of Technology.
+        </p>
+        <p>
+          My broader goal is to build robust, generalizable, and trustworthy multi-modal
+          perception systems that reason about human behavior across domains, sensors,
+          and deployment conditions &mdash; with applications in healthcare, rehabilitation,
+          assistive technologies, and human-robot cooperation.
+        </p>
       </div>
 
       <div class="card" id="news">
