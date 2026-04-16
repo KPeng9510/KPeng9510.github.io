@@ -70,12 +70,12 @@
     }
 
     .hero {
-      padding: 4.5rem 0 2.5rem;
+      padding: 3.5rem 0 2rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.4fr 0.9fr;
+      grid-template-columns: 1.6fr 1fr;
       gap: 2rem;
       align-items: start;
     }
@@ -86,6 +86,37 @@
       border-radius: 20px;
       padding: 1.5rem;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    /* About section with inline profile image */
+    .about-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .about-photo {
+      flex-shrink: 0;
+      width: 160px;
+    }
+
+    .about-photo img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      display: block;
+    }
+
+    .about-photo .photo-caption {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    .about-content {
+      flex: 1;
+      min-width: 0;
     }
 
     h1 {
@@ -189,9 +220,100 @@
 
     ul.clean li:first-child { border-top: none; }
 
-    .paper-list li {
-      padding: 0.7rem 0;
-      font-size: 0.98rem;
+    /* Publication cards */
+    .pub-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    .pub-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 1.1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fcfcfd;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .pub-card:hover {
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
+      transform: translateY(-1px);
+    }
+
+    .pub-figure {
+      width: 180px;
+      height: 120px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e3a8a;
+      font-size: 0.8rem;
+      font-weight: 600;
+      overflow: hidden;
+      border: 1px solid #dbeafe;
+    }
+
+    .pub-figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pub-content h3 {
+      font-size: 1rem;
+      margin: 0 0 0.35rem;
+      line-height: 1.35;
+    }
+
+    .pub-venue {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      background: #eff6ff;
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      border: 1px solid #dbeafe;
+    }
+
+    .pub-venue.spotlight {
+      color: #9a3412;
+      background: #fff7ed;
+      border-color: #fed7aa;
+    }
+
+    .pub-desc {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin: 0.3rem 0 0;
+      line-height: 1.55;
+    }
+
+    .pub-authors {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0.2rem 0 0.4rem;
+    }
+
+    /* Awards box */
+    .award-badge {
+      display: inline-block;
+      font-size: 0.82rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
     }
 
     footer {
@@ -211,7 +333,26 @@
       }
 
       .hero {
-        padding-top: 2.5rem;
+        padding-top: 2rem;
+      }
+
+      .about-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .about-photo {
+        width: 140px;
+      }
+
+      .pub-card {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-figure {
+        width: 100%;
+        height: 160px;
       }
     }
   </style>
@@ -224,6 +365,7 @@
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#news">News</a>
+          <a href="#research">Research</a>
           <a href="#publications">Publications</a>
           <a href="#projects">Projects</a>
           <a href="#service">Service</a>
@@ -235,32 +377,51 @@
   </header>
 
   <main class="container">
+    <!-- HERO SECTION: no photo here anymore -->
     <section class="hero">
       <div class="hero-grid">
-      
-        <!-- Profile Image -->
-        <div class="card" style="text-align:center;">
-          <img src="profile.jpg" alt="Kunyu Peng"
-               style="width:100%; max-width:260px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
-        </div>
-      
         <div class="hero-card">
           <h1>Dr.-Ing. Kunyu Peng</h1>
           <div class="subtitle">Post-Doctoral Researcher · CVHCI Lab · Karlsruhe Institute of Technology</div>
           <p>
-            I work on <strong>trustworthy human-centric AI</strong>, with a focus on
-            <strong>video understanding</strong>, <strong>human action recognition</strong>,
-            <strong>vision-language models</strong>, and <strong>2D–3D co-reasoning</strong>.
-            My research spans generalizable learning, noisy labels, open-set recognition,
-            egocentric and panoramic video understanding, and applications in healthcare,
-            robotics, and industrial environments.
+            I work on <strong>deep learning-based multi-modal video understanding</strong> and
+            <strong>trustworthy human-centric AI</strong>, with focus on
+            <strong>language-guided video understanding</strong>
+            (referring atomic action recognition and referring human action segmentation in
+            multi-person scenarios), <strong>open-set skeleton-based action recognition</strong>,
+            <strong>open-set domain generalization</strong>, <strong>label noise learning</strong>,
+            and <strong>multi-modal large language models (MLLMs)</strong>.
+          </p>
+          <p>
+            Looking forward, I am pursuing interdisciplinary research at the intersection of
+            <strong>MLLMs</strong>, <strong>video understanding</strong>,
+            <strong>motion generation and editing</strong>, and <strong>trustworthy AI</strong>,
+            including <strong>multi-robot collaborative video perception and reasoning</strong>
+            with uncertainty communication and life-long shared memory banks,
+            <strong>EgoPano human-centric collaborative reasoning</strong>
+            that combines panoramic and egocentric views for cyber-physical situation awareness,
+            <strong>MLLM-based online coaching</strong> for first-aid and rehabilitation for
+            users without prior experience, and <strong>unified text-guided models</strong>
+            for multi-human 3D motion generation, editing, and understanding &mdash; building on
+            our InterEdit dataset for text-guided multi-human motion editing.
+            My applications span <strong>rehabilitation</strong>,
+            <strong>first-aid training</strong>, <strong>assistive systems for visually impaired
+            individuals</strong>, <strong>digital aging</strong>, <strong>cyber-physical security
+            monitoring</strong>, and <strong>human-robot cooperation</strong> in smart homes and
+            circular factory environments.
           </p>
           <div class="tag-row">
-            <span class="tag">Human Action Recognition</span>
-            <span class="tag">Vision-Language Models</span>
+            <span class="tag">Multi-Modal Video Understanding</span>
             <span class="tag">Trustworthy AI</span>
-            <span class="tag">Video Understanding</span>
-            <span class="tag">Open-Set Domain Generalization</span>
+            <span class="tag">Referring Action Recognition</span>
+            <span class="tag">Human Action Segmentation</span>
+            <span class="tag">Open-Set Recognition</span>
+            <span class="tag">Domain Generalization</span>
+            <span class="tag">Label Noise Learning</span>
+            <span class="tag">MLLMs</span>
+            <span class="tag">Multi-Robot Co-Reasoning</span>
+            <span class="tag">EgoPano Reasoning</span>
+            <span class="tag">Motion Generation &amp; Editing</span>
           </div>
           <div class="cta-row">
             <a class="btn primary" href="mailto:kunyu.peng@kit.edu">Email</a>
@@ -275,35 +436,98 @@
           <p><strong>Affiliation:</strong> Karlsruhe Institute of Technology</p>
           <p><strong>Current roles:</strong> Post-Doctoral Researcher at KIT; Visiting Researcher at INSAIT</p>
           <p><strong>Advisor (PhD):</strong> Prof. Dr.-Ing. Rainer Stiefelhagen</p>
-          <p class="small muted">You can later add GitHub, DBLP, ORCID, LinkedIn, office address, and a profile photo here.</p>
+          <p class="small muted">You can later add GitHub, DBLP, ORCID, LinkedIn, and office address here.</p>
         </aside>
       </div>
     </section>
 
+    <!-- ABOUT (with small inline photo) and NEWS -->
     <section id="about" class="two-col">
       <div class="card">
         <h2>About</h2>
-        <p>
-          I received my PhD in Informatics from Karlsruhe Institute of Technology in 2024,
-          where my dissertation focused on <em>Towards Generalizable Deep Learning-Based Human Action Recognition</em>.
-          Before that, I completed my MSc in Electrical Engineering and Information Technology at KIT and a BSc in Automation at Beijing Institute of Technology.
-        </p>
-        <p>
-          My broader goal is to build robust and generalizable perception systems that can reason about human behavior across domains, sensors, and deployment conditions.
-        </p>
+        <div class="about-card">
+          <div class="about-photo">
+            <img src="profile.jpg" alt="Kunyu Peng" />
+            <div class="photo-caption">Kunyu Peng</div>
+          </div>
+          <div class="about-content">
+            <p>
+              I received my PhD in Informatics from Karlsruhe Institute of Technology in 2024,
+              where my dissertation focused on <em>Towards Generalizable Deep Learning-Based Human Action Recognition</em>.
+              Before that, I completed my MSc in Electrical Engineering and Information Technology at KIT
+              and a BSc in Automation at Beijing Institute of Technology.
+            </p>
+            <p>
+              My broader goal is to build robust, generalizable, and trustworthy multi-modal
+              perception systems that reason about human behavior across domains, sensors,
+              and deployment conditions &mdash; with applications in healthcare, rehabilitation,
+              assistive technologies, and human-robot cooperation.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="card" id="news">
         <h2>News</h2>
         <ul class="clean">
           <li><strong>2026:</strong> Serving as Associated Editor for IEEE RA-L, IV, and ITSC.</li>
-          <li><strong>2025:</strong> Received ICLR Notable Reviewer Award and CVPR Outstanding Reviewer Award.</li>
+          <li><strong>2025:</strong> Paper accepted at <strong>NeurIPS 2025 as Spotlight</strong> (HopaDIFF).</li>
+          <li><strong>2025:</strong> Received <strong>ICLR Notable Reviewer Award</strong> and <strong>CVPR Outstanding Reviewer Award</strong>.</li>
           <li><strong>2025:</strong> Started visiting research collaboration at INSAIT with Prof. Luc Van Gool and Prof. Danda Paudel.</li>
-          <li><strong>2024:</strong> Received NeurIPS Top Reviewer Award and ICRA Best Paper Finalist recognition.</li>
+          <li><strong>2024:</strong> Received <strong>NeurIPS Top Reviewer Award</strong> and <strong>ICRA Best Paper Finalist</strong> recognition.</li>
         </ul>
       </div>
     </section>
 
+    <!-- RESEARCH INTERESTS (expanded, aligned with research statement) -->
+    <section id="research" class="card">
+      <h2>Research Interests</h2>
+      <p>
+        My research lies in <strong>deep learning-based multi-modal video understanding</strong>
+        and <strong>trustworthy challenges in computer vision</strong>, including
+        <em>label noise learning</em>, <em>domain generalization</em>, and
+        <em>open-world recognition</em>. I develop methodologies that address multi-modal
+        interaction tasks and close the gap between training distributions and real-world
+        deployment conditions.
+      </p>
+      <p>
+        My key methodological contributions include:
+      </p>
+      <ul>
+        <li><strong>Cross-modal uncertainty-aware logits calibration</strong> to improve awareness of unseen classes for open-set action recognition.</li>
+        <li><strong>Text-guided holistic-partial Fourier-conditioned diffusion networks</strong> for human action segmentation in multi-person scenarios.</li>
+        <li><strong>Text-guided atomic video action recognition</strong> using cross-stream agent attention.</li>
+        <li><strong>Bi-level hardest-domain scheduling</strong> in meta-learning for advanced open-set domain generalization.</li>
+        <li><strong>Hyperbolic space prototypes</strong> for label denoising in domain-agnostic meta-learning under noisy labels.</li>
+      </ul>
+
+      <h3 style="margin-top:1.5rem;">Future Research Directions</h3>
+      <p>
+        My future agenda focuses on interdisciplinary advancements at the intersection of
+        <strong>multi-modal large language models (MLLMs)</strong>, <strong>video understanding</strong>,
+        <strong>motion generation and understanding</strong>, and <strong>trustworthy AI</strong>,
+        with applications in rehabilitation, first-aid training, assistance for visually impaired
+        individuals, and digital aging:
+      </p>
+      <ul>
+        <li><strong>Uncertainty-aware multi-robot collaborative spatial reasoning and human activity understanding</strong> &mdash; modeling uncertainty propagation across multiple cooperating robots via structured communication, multimodal fusion, and hyperbolic memory graphs for reliable long-term spatial knowledge.</li>
+        <li><strong>Trustworthy human action-aware MLLMs for cybersecurity, first-aid, and rehabilitation</strong> &mdash; joint reasoning across egocentric and exocentric perspectives, interactive multimodal training assistants, and parameter-efficient tuning with evidential uncertainty estimation.</li>
+        <li><strong>Text-guided multi-human interaction, action editing, and understanding</strong> &mdash; MLLM- and diffusion-based frameworks for multi-human motion understanding, editing, and generation with interaction-aware multimodal representations.</li>
+      </ul>
+
+      <h3 style="margin-top:1.5rem;">Reviewer Awards</h3>
+      <p style="margin-bottom:0.6rem;">
+        Recognized for service to the computer vision and machine learning community:
+      </p>
+      <div>
+        <span class="award-badge">🏆 ICLR 2025 Notable Reviewer Award</span>
+        <span class="award-badge">🏆 CVPR 2025 Outstanding Reviewer Award</span>
+        <span class="award-badge">🏆 NeurIPS 2024 Top Reviewer Award</span>
+        <span class="award-badge">🏆 ICRA 2024 Best Paper Finalist</span>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
     <section id="experience" class="card">
       <h2>Professional Experience</h2>
       <div class="item">
@@ -328,6 +552,7 @@
       </div>
     </section>
 
+    <!-- PROJECTS & EDUCATION -->
     <section id="projects" class="two-col">
       <div class="card">
         <h2>Research Projects</h2>
@@ -368,21 +593,141 @@
       </div>
     </section>
 
+    <!-- PUBLICATIONS: each as a card with figure + description -->
     <section id="publications" class="card">
       <h2>Selected Publications</h2>
-      <p class="muted">A short selected list for the homepage. You can later add a full publications page, BibTeX, PDFs, code, and project links.</p>
-      <ul class="clean paper-list">
-        <li>Wen, D.*, Qi, L.*, <strong>Peng+, K.</strong>, et al. (2025). <em>Go Beyond Earth: Understanding Human Actions and Scenes in Microgravity Environments</em>. ICLR 2026.</li>
-        <li><strong>Peng+, K.</strong>, Wen, D., Saquib, S.M., et al. (2026). <em>Mitigating Label Noise using Prompt-Based Hyperbolic Meta-Learning in Open-Set Domain Generalization</em>. IJCV 2026.</li>
-        <li><strong>Peng, K.</strong>, Huang, J., Huang+, X., et al. (2025). <em>HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios</em>. NeurIPS 2025 Spotlight.</li>
-        <li><strong>Peng, K.</strong>, Wen, D., Yang+, K., et al. (2024). <em>Advancing Open-Set Domain Generalization Using Evidential Bi-Level Hardest Domain Scheduler</em>. NeurIPS 2024.</li>
-        <li><strong>Peng*, K.</strong>, Fu*, J., Yang+, K., et al. (2024). <em>Referring Atomic Video Action Recognition</em>. ECCV 2024.</li>
-        <li><strong>Peng, K.</strong>, Yin, C., Zheng, J., et al. (2024). <em>Navigating Open Set Scenarios for Skeleton-Based Action Recognition</em>. AAAI 2024.</li>
-        <li>Xu, Y., <strong>Peng+, K.</strong>, Wen, D., et al. (2024). <em>Skeleton-Based Human Action Recognition with Noisy Labels</em>. IROS 2024.</li>
-        <li><strong>Peng, K.</strong>, Roitberg, A., Yang+, K., Zhang, J., Stiefelhagen, R. (2023). <em>Delving Deep Into One-Shot Skeleton-Based Action Recognition With Diverse Occlusions</em>. IEEE Transactions on Multimedia.</li>
-      </ul>
+      <p class="muted">
+        Each card below shows a key figure and short description of the paper.
+        Replace the placeholder image path (e.g., <code>figs/hopadiff.png</code>)
+        with the actual figure file once uploaded.
+      </p>
+
+      <div class="pub-grid">
+
+        <!-- Paper 1: HopaDIFF -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/hopadiff.png" alt="HopaDIFF key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(HopaDIFF)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue spotlight">NeurIPS 2025 Spotlight</span>
+            <h3>HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Huang, J., Huang, X., et al.</div>
+            <p class="pub-desc">
+              Proposes textual reference-guided human action segmentation for multi-person scenarios. Introduces <strong>RHAS133</strong>, the first dataset for this task, built from 133 movies with 137 fine-grained actions. The proposed <strong>HopaDIFF</strong> framework combines a cross-input gated HP-xLSTM with Fourier conditioning for effective temporal control, achieving state-of-the-art performance on RHAS133.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paper 2: HyProMeta / IJCV -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/hyprometa.png" alt="HyProMeta key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(HyProMeta)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IJCV 2026</span>
+            <h3>Mitigating Label Noise using Prompt-Based Hyperbolic Meta-Learning in Open-Set Domain Generalization</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Wen, D., Saquib, S. M., et al.</div>
+            <p class="pub-desc">
+              Introduces the <strong>OSDG under Noisy Labels (OSDG-NL)</strong> setting with benchmarks derived from PACS, DigitsDG, and DomainNet. The proposed <strong>HyProMeta</strong> framework incorporates hyperbolic category prototypes and a new-category agnostic prompt to jointly learn noise-aware representations by modeling hierarchical semantic structures in hyperbolic space. Achieves state-of-the-art across all established benchmarks.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paper 3: Go Beyond Earth / ICLR 2026 -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/go_beyond_earth.png" alt="Go Beyond Earth key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Go Beyond Earth)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ICLR 2026</span>
+            <h3>Go Beyond Earth: Understanding Human Actions and Scenes in Microgravity Environments</h3>
+            <div class="pub-authors">Wen, D.*, Qi, L.*, <strong>Peng, K.</strong>, et al.</div>
+            <p class="pub-desc">
+              Explores human action and scene understanding in microgravity environments, an under-studied setting with highly unusual motion patterns and visual context. The paper introduces a benchmark and methodology to adapt video understanding models to this domain, opening a new direction for robust action recognition under extreme distribution shifts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paper 4: EBHDS / NeurIPS 2024 -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/ebhds.png" alt="EBHDS key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(EBHDS)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">NeurIPS 2024</span>
+            <h3>Advancing Open-Set Domain Generalization Using Evidential Bi-Level Hardest Domain Scheduler</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Wen, D., Yang, K., et al.</div>
+            <p class="pub-desc">
+              Addresses <strong>Open-Set Domain Generalization (OSDG)</strong>, where models must generalize across domains while identifying unknown categories. The proposed <strong>Evidential Bi-Level Hardest Domain Scheduler (EBHDS)</strong> dynamically selects the most challenging domains in a meta-learning framework and incorporates evidential learning for uncertainty estimation, better separating known and unknown classes under domain shifts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paper 5: RefAtomNet / ECCV 2024 -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/refatomnet.png" alt="RefAtomNet key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(RefAtomNet)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">ECCV 2024</span>
+            <h3>Referring Atomic Video Action Recognition</h3>
+            <div class="pub-authors"><strong>Peng, K.*</strong>, Fu, J.*, Yang, K., et al.</div>
+            <p class="pub-desc">
+              Introduces <strong>Referring Atomic Video Action Recognition (RAVAR)</strong>, which identifies the atomic action of a target person guided by textual descriptions. Constructs the <strong>RefAVA</strong> dataset with 36,630 instances and proposes <strong>RefAtomNet</strong>, a cross-stream attention-driven framework that jointly models video, text, and location semantics. Outperforms methods adapted from action localization, video QA, and text-video retrieval.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paper 6: CrossMax / AAAI 2024 -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/crossmax.png" alt="CrossMax key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(CrossMax)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">AAAI 2024</span>
+            <h3>Navigating Open Set Scenarios for Skeleton-Based Action Recognition</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Yin, C., Zheng, J., et al.</div>
+            <p class="pub-desc">
+              Formalizes the <strong>Open-Set Skeleton-based Action Recognition (OS-SAR)</strong> task and establishes a benchmark across three datasets. The proposed <strong>CrossMax</strong> framework aligns skeleton joints, bones, and motion velocities via cross-modal discrepancy suppression during training and distance-based logits refinement during testing, achieving state-of-the-art across multiple datasets and backbones.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paper 7: Skeleton + Noisy Labels / IROS 2024 -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/skeleton_noisy.png" alt="Skeleton noisy labels key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(Noisy Skeleton)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IROS 2024</span>
+            <h3>Skeleton-Based Human Action Recognition with Noisy Labels</h3>
+            <div class="pub-authors">Xu, Y., <strong>Peng, K.</strong>, Wen, D., et al.</div>
+            <p class="pub-desc">
+              Studies skeleton-based action recognition under noisy label conditions, a realistic but under-explored setting for human activity understanding. Proposes a noise-robust training strategy tailored to skeleton data and demonstrates consistent gains across standard benchmarks, contributing toward trustworthy action recognition pipelines.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paper 8: One-Shot Occlusion / TMM -->
+        <div class="pub-card">
+          <div class="pub-figure">
+            <img src="figs/oneshot_occlusion.png" alt="One-shot occlusion key figure" onerror="this.style.display='none'; this.parentNode.innerHTML='Key Figure<br/>(One-Shot Occlusion)';" />
+          </div>
+          <div class="pub-content">
+            <span class="pub-venue">IEEE TMM 2023</span>
+            <h3>Delving Deep Into One-Shot Skeleton-Based Action Recognition With Diverse Occlusions</h3>
+            <div class="pub-authors"><strong>Peng, K.</strong>, Roitberg, A., Yang, K., Zhang, J., Stiefelhagen, R.</div>
+            <p class="pub-desc">
+              Investigates one-shot skeleton-based action recognition under diverse occlusion conditions, an important step toward robust deployment. Provides a comprehensive benchmark and proposes occlusion-aware mechanisms that substantially improve recognition performance across realistic occlusion patterns.
+            </p>
+          </div>
+        </div>
+
+      </div>
     </section>
 
+    <!-- SERVICE & TEACHING -->
     <section class="two-col">
       <div class="card" id="service">
         <h2>Academic Service</h2>
@@ -392,11 +737,18 @@
           <li><strong>2026:</strong> Associated Editor, IEEE Intelligent Transportation Systems Conference (ITSC)</li>
           <li><strong>2025:</strong> Associated Editor, IEEE Intelligent Vehicles Symposium (IV)</li>
           <li><strong>2023–2025:</strong> Reviewer for CVPR, ECCV, ICCV, IROS, ICRA, ICML, NeurIPS, ICLR, TPAMI, TMM, TITS, TIP, RAL, and others</li>
+          <li>
+            <strong>Reviewer Awards:</strong>
+            ICLR 2025 Notable Reviewer ·
+            CVPR 2025 Outstanding Reviewer ·
+            NeurIPS 2024 Top Reviewer ·
+            ICRA 2024 Best Paper Finalist
+          </li>
         </ul>
       </div>
 
       <div class="card" id="teaching">
-        <h2>Teaching & Mentoring</h2>
+        <h2>Teaching &amp; Mentoring</h2>
         <ul class="clean">
           <li>SS25 · Deep Learning for Computer Vision I: Basics</li>
           <li>WS24/25 · Deep Learning for Computer Vision II: Advanced Topics</li>
