@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr.-Ing. Kunyu Peng</title>
+  <meta name="description" content="Academic homepage of Dr.-Ing. Kunyu Peng, Post-Doctoral Researcher at Karlsruhe Institute of Technology." />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --border: #e5e7eb;
+      --maxw: 1060px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 4.5rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .hero-card, .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.1;
+      margin: 0 0 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 0 0 1rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin: 0 0 0.4rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .tag {
+      font-size: 0.9rem;
+      padding: 0.42rem 0.7rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1e3a8a;
+      border: 1px solid #dbeafe;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    section {
+      padding: 1rem 0 0;
+      margin-bottom: 1.25rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .item {
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .item:first-child { border-top: none; padding-top: 0; }
+
+    .meta {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.clean li {
+      padding: 0.45rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    ul.clean li:first-child { border-top: none; }
+
+    .paper-list li {
+      padding: 0.7rem 0;
+      font-size: 0.98rem;
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .small {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid, .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Dr.-Ing. Kunyu Peng</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#news">News</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#service">Service</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <h1>Dr.-Ing. Kunyu Peng</h1>
+          <div class="subtitle">Post-Doctoral Researcher · CVHCI Lab · Karlsruhe Institute of Technology</div>
+          <p>
+            I work on <strong>trustworthy human-centric AI</strong>, with a focus on
+            <strong>video understanding</strong>, <strong>human action recognition</strong>,
+            <strong>vision-language models</strong>, and <strong>2D–3D co-reasoning</strong>.
+            My research spans generalizable learning, noisy labels, open-set recognition,
+            egocentric and panoramic video understanding, and applications in healthcare,
+            robotics, and industrial environments.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Human Action Recognition</span>
+            <span class="tag">Vision-Language Models</span>
+            <span class="tag">Trustworthy AI</span>
+            <span class="tag">Video Understanding</span>
+            <span class="tag">Open-Set Domain Generalization</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:kunyu.peng@kit.edu">Email</a>
+            <a class="btn" href="https://scholar.google.com/citations?user=pA9c0YsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a class="btn" href="#publications">Selected Publications</a>
+          </div>
+        </div>
+
+        <aside class="card" id="contact">
+          <h2>Contact</h2>
+          <p><strong>Email:</strong> <a href="mailto:kunyu.peng@kit.edu">kunyu.peng@kit.edu</a></p>
+          <p><strong>Affiliation:</strong> Karlsruhe Institute of Technology</p>
+          <p><strong>Current roles:</strong> Post-Doctoral Researcher at KIT; Visiting Researcher at INSAIT</p>
+          <p><strong>Advisor (PhD):</strong> Prof. Dr.-Ing. Rainer Stiefelhagen</p>
+          <p class="small muted">You can later add GitHub, DBLP, ORCID, LinkedIn, office address, and a profile photo here.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="two-col">
+      <div class="card">
+        <h2>About</h2>
+        <p>
+          I received my PhD in Informatics from Karlsruhe Institute of Technology in 2024,
+          where my dissertation focused on <em>Towards Generalizable Deep Learning-Based Human Action Recognition</em>.
+          Before that, I completed my MSc in Electrical Engineering and Information Technology at KIT and a BSc in Automation at Beijing Institute of Technology.
+        </p>
+        <p>
+          My broader goal is to build robust and generalizable perception systems that can reason about human behavior across domains, sensors, and deployment conditions.
+        </p>
+      </div>
+
+      <div class="card" id="news">
+        <h2>News</h2>
+        <ul class="clean">
+          <li><strong>2026:</strong> Serving as Associated Editor for IEEE RA-L, IV, and ITSC.</li>
+          <li><strong>2025:</strong> Received ICLR Notable Reviewer Award and CVPR Outstanding Reviewer Award.</li>
+          <li><strong>2025:</strong> Started visiting research collaboration at INSAIT with Prof. Luc Van Gool and Prof. Danda Paudel.</li>
+          <li><strong>2024:</strong> Received NeurIPS Top Reviewer Award and ICRA Best Paper Finalist recognition.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="card">
+      <h2>Professional Experience</h2>
+      <div class="item">
+        <h3>Visiting Researcher · INSAIT</h3>
+        <div class="meta">Oct 2025 – Present</div>
+        <p>Collaboration with Prof. Luc Van Gool and Prof. Danda Paudel on egocentric and panoramic video understanding and action understanding.</p>
+      </div>
+      <div class="item">
+        <h3>Post-Doctoral Researcher · Karlsruhe Institute of Technology</h3>
+        <div class="meta">Oct 2024 – Present</div>
+        <p>Research on trustworthy challenges in human-centric AI, vision-language models, multi-agent systems, and 2D–3D co-reasoning.</p>
+      </div>
+      <div class="item">
+        <h3>PhD Candidate · Karlsruhe Institute of Technology</h3>
+        <div class="meta">Apr 2021 – Oct 2024</div>
+        <p>Research on trustworthy human action understanding and vision-language models.</p>
+      </div>
+      <div class="item">
+        <h3>Intern · Bosch, Leonberg</h3>
+        <div class="meta">Nov 2019 – Apr 2020</div>
+        <p>Worked on multimodal semantic segmentation and monocular depth estimation for automated vehicles.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="two-col">
+      <div class="card">
+        <h2>Research Projects</h2>
+        <div class="item">
+          <h3>SmartAGE</h3>
+          <div class="meta">2021 – Present</div>
+          <p>Deep learning-based activity analysis for elderly people, funded by the Carl-Zeiss-Foundation, in collaboration with Heidelberg University, Frankfurt University, and Mannheim University.</p>
+        </div>
+        <div class="item">
+          <h3>SFB 1574 Circular Factory</h3>
+          <div class="meta">2024 – Present</div>
+          <p>Leading the PI work package of a DFG-funded project on trustworthy human perception for reliable robot–human cooperation in circular factory environments, with the University of Stuttgart.</p>
+        </div>
+        <div class="item">
+          <h3>HeiKA-Star PACo</h3>
+          <div class="meta">2025 – Present</div>
+          <p>Research on multimodal human cognitive status estimation and reasoning from video data.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>PhD in Informatics · KIT</h3>
+          <div class="meta">Apr 2021 – Oct 2024</div>
+          <p>Advisor: Prof. Dr.-Ing. Rainer Stiefelhagen</p>
+        </div>
+        <div class="item">
+          <h3>MSc in Electrical Engineering and Information Technology · KIT</h3>
+          <div class="meta">Oct 2017 – Feb 2021</div>
+          <p>Advisors: Prof. Dr.-Ing. Michael Heizmann and Prof. Dr.-Ing. Christoph Stiller</p>
+        </div>
+        <div class="item">
+          <h3>BSc in Automation · Beijing Institute of Technology</h3>
+          <div class="meta">Sep 2013 – Jun 2017</div>
+          <p>Advisor: Prof. Yuan Li</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="card">
+      <h2>Selected Publications</h2>
+      <p class="muted">A short selected list for the homepage. You can later add a full publications page, BibTeX, PDFs, code, and project links.</p>
+      <ul class="clean paper-list">
+        <li>Wen, D.*, Qi, L.*, <strong>Peng+, K.</strong>, et al. (2025). <em>Go Beyond Earth: Understanding Human Actions and Scenes in Microgravity Environments</em>. ICLR 2026.</li>
+        <li><strong>Peng+, K.</strong>, Wen, D., Saquib, S.M., et al. (2026). <em>Mitigating Label Noise using Prompt-Based Hyperbolic Meta-Learning in Open-Set Domain Generalization</em>. IJCV 2026.</li>
+        <li><strong>Peng, K.</strong>, Huang, J., Huang+, X., et al. (2025). <em>HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios</em>. NeurIPS 2025 Spotlight.</li>
+        <li><strong>Peng, K.</strong>, Wen, D., Yang+, K., et al. (2024). <em>Advancing Open-Set Domain Generalization Using Evidential Bi-Level Hardest Domain Scheduler</em>. NeurIPS 2024.</li>
+        <li><strong>Peng*, K.</strong>, Fu*, J., Yang+, K., et al. (2024). <em>Referring Atomic Video Action Recognition</em>. ECCV 2024.</li>
+        <li><strong>Peng, K.</strong>, Yin, C., Zheng, J., et al. (2024). <em>Navigating Open Set Scenarios for Skeleton-Based Action Recognition</em>. AAAI 2024.</li>
+        <li>Xu, Y., <strong>Peng+, K.</strong>, Wen, D., et al. (2024). <em>Skeleton-Based Human Action Recognition with Noisy Labels</em>. IROS 2024.</li>
+        <li><strong>Peng, K.</strong>, Roitberg, A., Yang+, K., Zhang, J., Stiefelhagen, R. (2023). <em>Delving Deep Into One-Shot Skeleton-Based Action Recognition With Diverse Occlusions</em>. IEEE Transactions on Multimedia.</li>
+      </ul>
+    </section>
+
+    <section class="two-col">
+      <div class="card" id="service">
+        <h2>Academic Service</h2>
+        <ul class="clean">
+          <li><strong>2026:</strong> Associated Editor, IEEE Robotics and Automation Letters (RA-L)</li>
+          <li><strong>2026:</strong> Associated Editor, IEEE Intelligent Vehicles Symposium (IV)</li>
+          <li><strong>2026:</strong> Associated Editor, IEEE Intelligent Transportation Systems Conference (ITSC)</li>
+          <li><strong>2025:</strong> Associated Editor, IEEE Intelligent Vehicles Symposium (IV)</li>
+          <li><strong>2023–2025:</strong> Reviewer for CVPR, ECCV, ICCV, IROS, ICRA, ICML, NeurIPS, ICLR, TPAMI, TMM, TITS, TIP, RAL, and others</li>
+        </ul>
+      </div>
+
+      <div class="card" id="teaching">
+        <h2>Teaching & Mentoring</h2>
+        <ul class="clean">
+          <li>SS25 · Deep Learning for Computer Vision I: Basics</li>
+          <li>WS24/25 · Deep Learning for Computer Vision II: Advanced Topics</li>
+          <li>WS24/25 · Seminar: Computer Vision for Human-Computer Interaction</li>
+          <li>Mentoring PhD, Master’s, and Bachelor’s students at KIT</li>
+          <li>Multiple supervised theses with top grades</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Dr.-Ing. Kunyu Peng. Last updated manually from CV.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
